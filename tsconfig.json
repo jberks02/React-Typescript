@@ -20,17 +20,12 @@
         "lib": ["dom", "ES2019.Array"],
         "target": "ES2020",
         "module": "esnext", 
-        "outDir": "./target", 
         "rootDirs": [
             "./src"
         ], 
         "typeRoots": [
             "./node_modules/@types", 
             "./src/types"
-        ], 
-        "types": [
-            "jest", 
-            "node"
         ], 
         "noImplicitAny": true,
         "declaration": true, 

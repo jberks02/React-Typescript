@@ -3,7 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
-    entry: './web/index.tsx', // our entry point, as mentioned earlier
+    entry: './src/index.tsx', // our entry point, as mentioned earlier
     mode: 'development',
     module: {
         rules: [

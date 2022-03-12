@@ -1,21 +1,18 @@
 {
-  "name": "typescript-react-server-boilerplate",
+  "name": "react-typescript",
   "version": "1.0.0",
   "description": "Boiler plate repository to quickly start new projects using a typescript backend with a typescript enhanced React frontend running out of different packages",
   "main": "index.ts",
   "scripts": {
     "test": "jest --collectiveCoverage",
-    "dev-server": "concurrently \"tsc -w\" \"nodemon -w .env -r dotenv/config target/index.js\"",
-    "clean": "rimraf target",
-    "build-server": "tsc",
-    "build-react": "webpack",
-    "postbuild": "copyfiles -E package.json package-lock.json target",
-    "dev-react": "webpack serve --mode development", 
+    "build": "webpack && cp ./public/index.html ./dist",
+    "dev": "webpack serve --mode development",
+    "clean": "rimraf ./dist",
     "typegen": "kea-typegen write ./web/components/Counter/counterLogic.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jberks02/typescript-react-server-boilerplate.git"
+    "url": "git+https://github.com/jberks02/React-Typescript.git"
   },
   "keywords": [
     "boiler",
@@ -24,12 +21,11 @@
   "author": "Justin Berkshire",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jberks02/typescript-react-server-boilerplate/issues"
+    "url": "https://github.com/jberks02/React-Typescript/issues"
   },
-  "homepage": "https://github.com/jberks02/typescript-react-server-boilerplate#readme",
+  "homepage": "https://github.com/jberks02/React-Typescript#readme",
   "dependencies": {
     "concurrently": "^7.0.0",
-    "dotenv": "^16.0.0",
     "kea": "^2.5.8",
     "node-fetch": "^3.2.1",
     "npm-run-all": "^4.1.5",
@@ -39,9 +35,7 @@
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
     "reselect": "^4.1.5",
-    "rimraf": "^3.0.2",
-    "swagger-jsdoc": "^6.1.0",
-    "swagger-ui-express": "^4.3.0"
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.6",
@@ -66,7 +60,6 @@
     "eslint": "^8.10.0",
     "jest": "^27.5.1",
     "kea-typegen": "^1.4.2",
-    "nodemon": "^2.0.15",
     "style-loader": "^3.3.1",
     "ts-jest": "^27.1.3",
     "typescript": "^4.6.2",
